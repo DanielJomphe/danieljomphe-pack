@@ -121,11 +121,11 @@
 
 ;;;(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 
-(add-hook 'slime-repl-mode-hook
-          (lambda ()
-            (font-lock-mode nil)
-            (clojure-mode-font-lock-setup)
-            (font-lock-mode t)))
+;; (add-hook 'slime-repl-mode-hook
+;;           (lambda ()
+;;             (font-lock-mode nil)
+;;             (clojure-mode-font-lock-setup)
+;;             (font-lock-mode t)))
 
 ;; (autoload 'markdown-mode "markdown-mode"
 ;;    "Major mode for editing Markdown files" t)
@@ -215,13 +215,6 @@
 ;;; WHATEVER
 ;;; -------------------------------------------------------------------------
 
-;;; TODO make sure this still works; last time, it didn't.
-;;; TODO make sure this is needed. There's a rgrep mode, see
-;;;      http://david.rothlis.net/emacs/basic_c.html
-;;; TODO bring ack into the fold, too! Try one of the packages.
-;;; thanks johnw: https://gist.github.com/1198329
-(defun find-grep-in-project (command-args)
-  (interactive
 ;;; Path on OS X, thanks https://github.com/purcell/exec-path-from-shell
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
