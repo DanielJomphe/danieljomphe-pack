@@ -1,14 +1,8 @@
-;; User pack init file
-;;
-;; User this file to initiate the pack configuration.
-;; See README for more information.
-
-;; Load bindings config
 (live-load-config-file "bindings.el")
 
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 ;;; PACKAGES
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 (defvar my-packages
   '(
   ;;color-theme-sanityinc-tomorrow
@@ -36,9 +30,9 @@
 ;;   (when (not (package-installed-p p))
 ;;     (package-install p)))
 
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 ;;; COSMETIC
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 
 ;;; TODO properly conditionalize most of the following
 ;;; TODO make those functions callable at any time, and improve upon that
@@ -110,9 +104,9 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 3) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
 
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 ;;; MODALITY
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 
 ;;(global-whitespace-mode)                ; Run this only with ESK!
 ;;(global-hl-sexp-mode)
@@ -125,7 +119,6 @@
 ;;; (global-whatever-mode)
 
 (add-to-list 'auto-mode-alist '("\.dtm$"  . clojure-mode))
-;;; TODO make sure the following is a good idea:
 (add-to-list 'auto-mode-alist '("\.cljs$" . clojure-mode))
 
 ;;; deactivate line highlighting from both ESK and Live Coding
@@ -146,9 +139,9 @@
 (setq auto-mode-alist
    (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 ;;; DURENDAL
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 
 ;;; Clojure Utilities
 ;;; Durendal 0.2 didn't work; let's copy & adapt what works.
@@ -217,17 +210,17 @@
 
 (durendal-enable)
 
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 ;;; BINDINGS
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 
 (global-set-key "\C-h" 'backward-delete-char-untabify)
 (define-key isearch-mode-map "\C-h" 'isearch-delete-char)
 (global-set-key (kbd "C-c C-j") 'clojure-jack-in)
 
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 ;;; WHATEVER
-;;; --------------------------------------------------------------------------
+;;; -------------------------------------------------------------------------
 
 ;;; TODO make sure this still works; last time, it didn't.
 ;;; TODO make sure this is needed. There's a rgrep mode, see
