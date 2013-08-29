@@ -111,7 +111,7 @@
 ;;;       (whatever-mode t)))
 ;;; (global-whatever-mode)
 
-(add-to-list 'auto-mode-alist '("\.dtm$"  . clojure-mode))
+(add-to-list 'auto-mode-alist '("\.edn$"  . clojure-mode))
 (add-to-list 'auto-mode-alist '("\.cljs$" . clojure-mode))
 
 ;;; deactivate line highlighting from both ESK and Live Coding
