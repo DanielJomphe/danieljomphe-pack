@@ -49,6 +49,8 @@
   (setq system-name (car (split-string system-name "\\.")))
   (set-face-attribute 'default nil :family "menlo")
   (set-face-attribute 'default nil :height 150)
+;;(set-face-attribute 'default nil :height 240)
+;;(set-face-attribute 'default nil :height 320)
 ;;(ns-toggle-fullscreen)
   )
 (defun dj-os-windows ()
