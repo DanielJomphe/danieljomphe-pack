@@ -18,6 +18,7 @@
   org
 ;;markdown-mode
 ;;guru-mode
+;;projectile
     )
   "A list of packages to ensure are installed at launch.")
 
@@ -97,6 +98,7 @@
 
 ;;(global-whitespace-mode)                ; Run this only with ESK!
 ;;(global-hl-sexp-mode)
+;;(projectile-global-mode)
 ;;(guru-global-mode +1)
 ;;(global-rainbow-delimiters-mode t)
 
