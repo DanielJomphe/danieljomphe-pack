@@ -44,11 +44,9 @@
 ;;; TODO properly conditionalize most of the following
 ;;; TODO make those functions callable at any time, and improve upon that
 
-(when (eq system-type 'darwin)
-  ;; Work around a bug on OS X where system-name is FQDN
-  (setq system-name (car (split-string system-name "\\."))))
-
 (defun dj-os-osx ()
+  ;; Work around a bug on OS X where system-name is FQDN
+  (setq system-name (car (split-string system-name "\\.")))
   (set-face-attribute 'default nil :family "menlo")
   (set-face-attribute 'default nil :height 150)
 ;;(ns-toggle-fullscreen)
@@ -69,8 +67,9 @@
   (add-to-list 'default-frame-alist '(top . 0))
   (add-to-list 'default-frame-alist '(height . 47))
   (add-to-list 'default-frame-alist '(width . 155)))
-(dj-os-osx)
 
+(when (eq system-type 'darwin)
+  (dj-os-osx))
 
 (defun dj-screen-small ()
   (split-window-horizontally))
@@ -224,14 +223,24 @@
 ;;; Path on OS X, thanks https://github.com/purcell/exec-path-from-shell
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
 ;;; ErgoEmacs, thanks http://ergoemacs.org/emacs/effective_emacs.html
 ;;(defalias 'list-buffers 'ibuffer)
+
+;;; Thanks http://batsov.com/articles/2012/10/14/emacs-on-osx/
+(defun swap-meta-and-super ()
+  "Swap the mapping of meta and super. Very useful for people using their Mac
+with a Windows external keyboard from time to time."
+  (interactive)
+  (if (eq mac-command-modifier 'super)
+      (progn
+        (setq mac-command-modifier 'meta)
+        (setq mac-option-modifier 'super)
+        (message "Command is now bound to META and Option is bound to SUPER."))
    (progn
-     (list (read-shell-command "Run find (like this): "
-                               '("git ls-files -z | xargs -0 egrep -nH -e " . 41)
-                               'grep-find-history))))
-  (when command-args
-    (let ((null-device nil)) ; see grep
-      (grep command-args))))
+      (setq mac-command-modifier 'super)
+      (setq mac-option-modifier 'meta)
+      (message "Command is now bound to SUPER and Option is bound to META."))))
+;;; (global-set-key (kbd "C-c w") 'swap-meta-and-super)
 
 (server-start)
