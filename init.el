@@ -17,6 +17,7 @@
     hl-sexp
   org
 ;;markdown-mode
+;;guru-mode
     )
   "A list of packages to ensure are installed at launch.")
 
@@ -96,6 +97,7 @@
 
 ;;(global-whitespace-mode)                ; Run this only with ESK!
 ;;(global-hl-sexp-mode)
+;;(guru-global-mode +1)
 ;;(global-rainbow-delimiters-mode t)
 
 ;;; (define-globalized-minor-mode whatever-mode
