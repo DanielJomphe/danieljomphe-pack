@@ -96,8 +96,8 @@
 ;;; MODALITY
 ;;; -------------------------------------------------------------------------
 
-;;(global-hl-sexp-mode)
 ;;(global-whitespace-mode)                ; ESK provides sane defaults
+(global-hl-sexp-mode)
 ;;(projectile-global-mode)
 ;;(guru-global-mode +1)
 ;;(global-rainbow-delimiters-mode t)
