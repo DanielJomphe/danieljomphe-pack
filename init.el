@@ -18,6 +18,7 @@
   org
 ;;markdown-mode
 ;;guru-mode
+;;ergoemacs-keybindings
 ;;projectile
     )
   "A list of packages to ensure are installed at launch.")
@@ -219,6 +220,8 @@
 ;;; thanks johnw: https://gist.github.com/1198329
 (defun find-grep-in-project (command-args)
   (interactive
+;;; ErgoEmacs, thanks http://ergoemacs.org/emacs/effective_emacs.html
+;;(defalias 'list-buffers 'ibuffer)
    (progn
      (list (read-shell-command "Run find (like this): "
                                '("git ls-files -z | xargs -0 egrep -nH -e " . 41)
