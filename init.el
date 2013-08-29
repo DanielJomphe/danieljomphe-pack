@@ -17,16 +17,6 @@
     hl-sexp
     markdown-mode
   org
-  starter-kit
-;;    * find-file-in-project
-;;    * idle-highlight-mode
-;;    * ido-ubiquitous
-;;    * magit
-  starter-kit-bindings
-  starter-kit-eshell
-  starter-kit-js
-  starter-kit-lisp
-;;    * elisp-slime-nav
     )
   "A list of packages to ensure are installed at launch.")
 
