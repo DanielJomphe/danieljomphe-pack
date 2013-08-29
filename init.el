@@ -3,6 +3,13 @@
 ;;; -------------------------------------------------------------------------
 ;;; PACKAGES
 ;;; -------------------------------------------------------------------------
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
+
 (defvar my-packages
   '(
   ;;color-theme-sanityinc-tomorrow
@@ -25,10 +32,18 @@
     )
   "A list of packages to ensure are installed at launch.")
 
-;; For now since I'm migrating to Emacs Live, let's wait before activating those.
-;; (dolist (p my-packages)
-;;   (when (not (package-installed-p p))
-;;     (package-install p)))
+(defun my-packages-installed-p ()
+  (loop for p in my-packages
+        when (not (package-installed-p p)) do (return nil)
+        finally (return t)))
+
+(unless (my-packages-installed-p)
+  (message "%s" "Refreshing the package database...")
+  (package-refresh-contents)
+  (message "%s" " done.")
+  (dolist (p my-packages)
+    (when (not (package-installed-p p))
+      (package-install p))))
 
 ;;; -------------------------------------------------------------------------
 ;;; COSMETIC
