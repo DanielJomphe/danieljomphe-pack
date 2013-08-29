@@ -15,8 +15,8 @@
   ;;elein
   ;;magit-simple-keys
     hl-sexp
-    markdown-mode
   org
+;;markdown-mode
     )
   "A list of packages to ensure are installed at launch.")
 
@@ -120,10 +120,10 @@
             (clojure-mode-font-lock-setup)
             (font-lock-mode t)))
 
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-(setq auto-mode-alist
-   (cons '("\\.md" . markdown-mode) auto-mode-alist))
+;; (autoload 'markdown-mode "markdown-mode"
+;;    "Major mode for editing Markdown files" t)
+;; (setq auto-mode-alist
+;;    (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
 ;;; -------------------------------------------------------------------------
 ;;; DURENDAL
