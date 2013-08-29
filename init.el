@@ -20,6 +20,7 @@
 ;;guru-mode
 ;;ergoemacs-keybindings
 ;;projectile
+    exec-path-from-shell
     )
   "A list of packages to ensure are installed at launch.")
 
@@ -220,6 +221,9 @@
 ;;; thanks johnw: https://gist.github.com/1198329
 (defun find-grep-in-project (command-args)
   (interactive
+;;; Path on OS X, thanks https://github.com/purcell/exec-path-from-shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 ;;; ErgoEmacs, thanks http://ergoemacs.org/emacs/effective_emacs.html
 ;;(defalias 'list-buffers 'ibuffer)
    (progn
