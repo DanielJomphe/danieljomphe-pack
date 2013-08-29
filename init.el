@@ -90,7 +90,7 @@
 (dj-cursor)
 
 (setq initial-scratch-message nil)
-;;; (setq initial-buffer-choice "~/.emacs.d/config/core.el")
+(setq initial-buffer-choice "~/.emacs.d.packs/danieljomphe-pack/init.el")
 
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 3) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
