@@ -12,8 +12,6 @@
 
 (defvar my-packages
   '(
-  ;;color-theme-sanityinc-tomorrow
-  color-theme-sanityinc-solarized
   ;;elein
   ;;magit-simple-keys
     hl-sexp
@@ -79,23 +77,6 @@
   (add-to-list 'default-frame-alist '(width . 155)))
 (dj-os-osx)
 
-(defun dj-theme-dark ()
-  (color-theme-sanityinc-solarized-dark)
-;;(color-theme-sanityinc-tomorrow-eighties)
-                                        ;TODO  (require 'idle-highlight-mode)
-                                        ;TODO  (set-face-background 'idle-highlight "#333333")
-  )
-(defun dj-theme-contrast ()
-  (load-file (concat dotfiles-lib-dir "blackbored.el"))
-  (color-theme-blackbored))
-(defun dj-theme-light ()
-  (color-theme-sanityinc-solarized-light)
-;;(color-theme-sanityinc-tomorrow-day)
-  (require 'idle-highlight-mode)
-  (set-face-background 'idle-highlight "#CCCCCC"))
-;;(dj-theme-dark)
-;;; (dj-theme-contrast)
-;;; (dj-theme-light)
 
 (defun dj-screen-small ()
   (split-window-horizontally))
