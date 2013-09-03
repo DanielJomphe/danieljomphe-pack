@@ -15,12 +15,10 @@
   ;;elein
   ;;magit-simple-keys
     hl-sexp
-    org
   ;;markdown-mode
   ;;guru-mode
   ;;ergoemacs-keybindings
   ;;projectile
-    exec-path-from-shell
     )
   "A list of packages to ensure are installed at launch.")
 
