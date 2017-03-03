@@ -18,7 +18,8 @@
   ;;markdown-mode
   ;;guru-mode
   ;;ergoemacs-keybindings
-  ;;projectile
+    ;;projectile
+    slime
     )
   "A list of packages to ensure are installed at launch.")
 
